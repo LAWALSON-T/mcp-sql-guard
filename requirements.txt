@@ -1,0 +1,6 @@
+mcp[cli]>=1.2,<2
+sqlglot>=25
+pymysql>=1.1
+anthropic>=0.40
+pytest>=8
+python-dotenv>=1.0

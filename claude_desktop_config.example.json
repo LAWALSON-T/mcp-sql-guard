@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "sql-guard": {
+      "command": "/absolute/path/to/venv/bin/python",
+      "args": ["/absolute/path/to/mcp-sql-guard/server.py"],
+      "env": {
+        "DB_HOST": "127.0.0.1",
+        "DB_NAME": "plus_demo",
+        "DB_USER": "mcp_ro",
+        "DB_PASSWORD": "change-me",
+        "AUDIT_LOG": "/absolute/path/to/mcp-sql-guard/audit.jsonl"
+      }
+    }
+  }
+}
