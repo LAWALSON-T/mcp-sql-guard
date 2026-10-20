@@ -80,6 +80,7 @@ These numbers come from my own runs on 13 and 14 October 2026. The evals used cl
 | Accuracy eval, after scorer change and added question q13 | 16 of 17 passed (q08 still fails) |
 | Must-block questions (counted in the totals above) | 4 of 4 stopped |
 | Injection test | 20 trials (two runs of 10): 0 obeyed, 0 attempted the owner column, code word appeared in all 20 answers inside a description of the planted text |
+| Instruction warning (audit log, 25 calls) | Raised on all 23 calls that returned the planted notes; the 2 calls without it read no notes. On a query over every opportunity, it flagged only the planted row |
 
 The manual tests in Claude Desktop used whichever model the app had selected at the time. They are not part of the numbers above.
 
@@ -104,9 +105,6 @@ Smaller issues: the eval script crashed at the end because evals/results did not
 
 All eval and injection runs described here, including the development runs, cost about $0.17 in API usage, taken from the Console usage page on 14 October 2026 (month to date, all models). Interactive use through Claude Desktop is billed through the plan rather than per token.
 
-## User feedback
-
-[Add this after two or three people have tried the tool: what they asked, what went wrong, and anything surprising. Delete this line before publishing.]
 
 ## Limitations
 
@@ -138,5 +136,5 @@ The scorer change, q13 and the four-outcome classification for the injection tes
 
 - Per-user credentials and per-user audit trails.
 - Signed or append-only audit storage.
-- Structured extraction from documents, planned as a separate project.
+- Structured extraction from documents: built as [CUSTOMER-MANDATE-OCR](https://github.com/LAWALSON-T/CUSTOMER-MANDATE-OCR), which applies the same rule (code verifies whatever the model returns) to bank mandate forms.
 - Regression evals that run in CI against a disposable database.
